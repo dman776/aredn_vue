@@ -5,184 +5,24 @@
       <!--Section: ALERTS-->
       <section>
         <div class="row">
-          <div class="col-xl-6 col-md-12 mb-4">
-            <div class="card">
-              <div class="card-body">
-                <div class="d-flex justify-content-between p-md-1">
-                  <div class="d-flex flex-row">
-                    <div class="align-self-center">
-                      <i class="fas fa-exclamation-triangle text-danger fa-3x me-4"></i>
-                    </div>
-                    <div>
-                      <h4>AREDN<br />Alert</h4>
-                    </div>
-                  </div>
-                  <div class="align-self-center">
-                    <p class="mb-0">A new vulnerability in FOO has been discovered.   Upgrade your FOO immediately!</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-6 col-md-12 mb-4">
-            <div class="card">
-              <div class="card-body">
-                <div class="d-flex justify-content-between p-md-1">
-                  <div class="d-flex flex-row">
-                    <div class="align-self-center">
-                      <i
-                        class="fas fa-exclamation-circle text-warning fa-3x me-4"
-                        ></i>
-                    </div>
-                    <div>
-                      <h4>Local<br />Alert</h4>
-                    </div>
-                  </div>
-                  <div class="align-self-center">
-                    <p class="mb-0">A weather bulletin has been issued for your area.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <AREDNAlert />
+          <LOCALAlert />
         </div>
       </section>
       <!--Section: ALERTS-->
-      <!--Section: Minimal statistics cards-->
+      <!--Section: Info cards-->
       <section>
         <div class="row">
-          <div class="col-xl-3 col-sm-6 col-12 mb-4">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">IP Addresses</h4>
-                <div class="d-flex justify-content-between px-md-1">
-                  <div class="align-self-center">
-                    <i class="fas fa-network-wired text-warning fa-2x"></i>
-                  </div>
-                  <div class="text-end">
-                    <p class="mb-0">Wifi: 10.1.2.3</p>
-                    <p class="mb-0">LAN: 10.1.3.4</p>
-                    <p class="mb-0">WAN: 192.168.0.3</p>
-                    <p class="mb-0">Gateway: 192.168.0.1</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 col-12 mb-4">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">Mesh RF</h4>
-                <div class="d-flex justify-content-between px-md-1">
-                  <div class="align-self-center">
-                    <i class="fas fa-wifi text-primary fa-2x"></i>
-                  </div>
-                  <div class="text-end">
-                    <p class="mb-0">SSID: AREDN-10-v3</p>
-                    <p class="mb-0">Channel: -1</p>
-                    <p class="mb-0">Bandwidth: 10 Mhz</p>
-                    <p class="mb-0">Frequency: 2.402 Ghz</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 col-12 mb-4">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">Location</h4>
-                <div class="d-flex justify-content-between px-md-1">
-                  <div class="align-self-center">
-                    <i class="fas fa-map-marker-alt text-normal fa-2x"></i>
-                  </div>
-                  <div class="text-end">
-                    <p class="mb-0">Latitude: 30.22</p>
-                    <p class="mb-0">Longitude: -95.55</p>
-                    <p class="mb-0">Grid Square: EM20ff</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 col-12 mb-4">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">Performance</h4>
-                <div class="d-flex justify-content-between px-md-1">
-                  <div class="align-self-center">
-                    <i class="fas fa-tachometer-alt text-normal fa-2x"></i>
-                  </div>
-                  <div class="text-end">
-                    <p class="mb-0">Load Avg (1min): 0.21</p>
-                    <p class="mb-0">Load Avg (5min): 0.13</p>
-                    <p class="mb-0">Load Avg (15min): 0.1</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <IPAddresses :info="info.pages.status.ip" />
+          <MeshRF :info="info.pages.status.meshrf" />
+          <Location :info="info.pages.status.location" />
+          <Performance :info="info.pages.status.sysinfo" />
         </div>
         <div class="row">
-          <div class="col-xl-3 col-sm-6 col-12 mb-4">
-            <div class="card">
-              <div class="card-body">
-                <div class="d-flex justify-content-between px-md-1">
-                  <div>
-                    <h3 class="text-danger">8292kb</h3>
-                    <p class="mb-0">Freespace in /</p>
-                  </div>
-                  <div class="align-self-center">
-                    <i class="fas fa-rocket text-danger fa-3x"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 col-12 mb-4">
-            <div class="card">
-              <div class="card-body">
-                <div class="d-flex justify-content-between px-md-1">
-                  <div>
-                    <h3 class="text-success">29148kb</h3>
-                    <p class="mb-0">Freespace in /tmp</p>
-                  </div>
-                  <div class="align-self-center">
-                    <i class="far fa-user text-success fa-3x"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 col-12 mb-4">
-            <div class="card">
-              <div class="card-body">
-                <div class="d-flex justify-content-between px-md-1">
-                  <div>
-                    <h3 class="text-warning">64.89 %</h3>
-                    <p class="mb-0">foo</p>
-                  </div>
-                  <div class="align-self-center">
-                    <i class="fas fa-chart-pie text-warning fa-3x"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 col-12 mb-4">
-            <div class="card">
-              <div class="card-body">
-                <div class="d-flex justify-content-between px-md-1">
-                  <div>
-                    <h3 class="text-info">423</h3>
-                    <p class="mb-0">Support Tickets</p>
-                  </div>
-                  <div class="align-self-center">
-                    <i class="far fa-life-ring text-info fa-3x"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <FSRootFree :info="info.pages.status.storage" />
+          <FSTmpFree :info="info.pages.status.storage" />
+          <OLSREntries :info="info.pages.status.olsr" />
+          <OLSRNodes :info="info.pages.status.olsr" />
         </div>
         <div class="row">
           <div class="col-xl-3 col-sm-6 col-12 mb-4">
@@ -295,22 +135,55 @@
           </div>
         </div>
       </section>
-      <!--Section: Minimal statistics cards-->
-
+      <!--Section: Info cards-->
     </div>
   </main>
   <!--Main layout-->
 </template>
 
 <script>
+import AREDNAlert from "./AREDNAlert.vue";
+import LOCALAlert from "./LOCALAlert.vue";
+import IPAddresses from "./IPAddresses.vue";
+import MeshRF from "./MeshRF.vue";
+import Location from "./Location.vue";
+import Performance from "./Performance.vue";
+import OLSREntries from "./OLSREntries.vue";
+import OLSRNodes from "./OLSRNodes.vue";
+import FSRootFree from "./FSRootFree.vue";
+import FSTmpFree from "./FSTmpFree.vue";
+
+
 export default {
-  name: "Test",
-  created() {},
-  data() {
-    return {};
+  name: "Status",
+  components: {
+     AREDNAlert,
+     LOCALAlert,
+     IPAddresses,
+     MeshRF,
+     Location,
+     Performance,
+     OLSREntries,
+     OLSRNodes,
+     FSRootFree,
+     FSTmpFree
   },
-  props: {},
-  methods: {},
+  data() {
+    return {
+      info: {}
+    }
+  },
+  methods: {
+    async fetchInfo() {
+      const res = await fetch('http://localnode.local.mesh:8080/cgi-bin/api?status=ip,meshrf,sysinfo,location,olsr,storage')
+      const data = await res.json()
+      return data
+    }
+  },
+  async created() {
+    this.info = await this.fetchInfo()
+    // console.log(this.info['pages']['status']['ip']['wan'])
+  }
 };
 </script>
 

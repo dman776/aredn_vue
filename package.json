@@ -9,11 +9,13 @@
     "start": "vue-cli-service serve --open"
   },
   "dependencies": {
+    "@fortawesome/vue-fontawesome": "^3.0.0-3",
     "core-js": "^3.6.5",
     "mdb-vue-ui-kit": "^1.0.0-alpha4",
     "vue": "^3.0.0"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
