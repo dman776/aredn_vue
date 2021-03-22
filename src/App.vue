@@ -2,7 +2,7 @@
   <!--Main Navigation-->
   <header>
     <Sidebar />
-    <Navbar />
+    <Navbar :info="info.pages.status.sysinfo" />
   </header>
   <!--Main Navigation-->
 
@@ -21,6 +21,22 @@ export default {
     Sidebar,
     Navbar,
     Status
+  },
+  data() {
+    return {
+      info: {}
+    }
+  },
+  methods: {
+    async fetchInfo() {
+      const res = await fetch('http://localnode.local.mesh:8080/cgi-bin/api?status=sysinfo')
+      const data = await res.json()
+      return data
+    }
+  },
+  async created() {
+    this.info = await this.fetchInfo()
+    console.log(this.info['pages']['status']['sysinfo'])
   }
 }
 </script>

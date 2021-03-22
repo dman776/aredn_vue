@@ -176,6 +176,7 @@ export default {
   methods: {
     async fetchInfo() {
       const res = await fetch('http://localnode.local.mesh:8080/cgi-bin/api?status=ip,meshrf,sysinfo,location,olsr,storage')
+      // const res = await fetch(document.location.origin + '/cgi-bin/api?status=ip,meshrf,sysinfo,location,olsr,storage')
       const data = await res.json()
       return data
     }
