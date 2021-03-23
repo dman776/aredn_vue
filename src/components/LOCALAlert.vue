@@ -14,7 +14,7 @@
             </div>
           </div>
           <div class="align-self-center">
-            <p class="mb-0">A weather bulletin has been issued for your area.</p>
+            <p class="mb-0" v-html="info.local"></p>
           </div>
         </div>
       </div>
@@ -25,7 +25,10 @@
 <script>
 
 export default ({
-    name: "LOCALAlert"
+    name: "LOCALAlert",
+    props: {
+      info: {}
+    }
 })
 </script>
 

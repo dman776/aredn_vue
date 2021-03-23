@@ -12,7 +12,7 @@
                     </div>
                   </div>
                   <div class="align-self-center">
-                    <p class="mb-0">A new vulnerability in FOO has been discovered.   Upgrade your FOO immediately!</p>
+                    <p class="mb-0" v-html="info.aredn"></p>
                   </div>
                 </div>
               </div>
@@ -23,7 +23,10 @@
 <script>
 
 export default ({
-    name: "AREDNAlert"
+    name: "AREDNAlert",
+    props: {
+      info: {} 
+    }
 })
 </script>
 

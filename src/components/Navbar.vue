@@ -43,7 +43,7 @@
               data-mdb-toggle="dropdown"
               aria-expanded="false">
               <i class="fas fa-bell"></i>
-              <span class="badge rounded-pill badge-notification bg-danger">1</span>
+              <span class="badge rounded-pill badge-notification bg-danger">{{alertscount}}</span>
             </a>
           </li>
           <!-- Icon -->
@@ -68,7 +68,8 @@ export default {
     return {};
   },
   props: {
-    info: {}
+    info: {},
+    alertscount: Number
   },
   methods: {},
 };

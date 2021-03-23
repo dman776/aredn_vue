@@ -8,7 +8,7 @@
                 <p class="mb-0">Freespace in /</p>
                 </div>
                 <div class="align-self-center">
-                <i class="fas fa-rocket text-danger fa-3x"></i>
+                <i class="fas fa-save text-danger fa-3x"></i>
                 </div>
             </div>
             </div>

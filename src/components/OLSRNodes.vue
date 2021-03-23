@@ -8,7 +8,7 @@
             <p class="mb-0">OLSR Nodes</p>
           </div>
           <div class="align-self-center">
-            <i class="far fa-life-ring text-info fa-3x"></i>
+            <i class="fas fa-satellite-dish text-info fa-3x"></i>
           </div>
         </div>
       </div>

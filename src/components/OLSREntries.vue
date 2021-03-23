@@ -8,7 +8,7 @@
             <p class="mb-0">OLSR Entries</p>
           </div>
           <div class="align-self-center">
-            <i class="fas fa-chart-pie text-warning fa-3x"></i>
+            <i class="fas fa-list text-warning fa-3x"></i>
           </div>
         </div>
       </div>
