@@ -34,22 +34,22 @@
         <!-- Right links -->
         <ul class="navbar-nav ms-auto d-flex flex-row">
           <!-- Notification dropdown -->
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
-              href="#"
-              id="navbarDropdownMenuLink"
-              role="button"
-              data-mdb-toggle="dropdown"
-              aria-expanded="false">
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#">
               <i class="fas fa-bell"></i>
               <span class="badge rounded-pill badge-notification bg-danger">{{alertscount}}</span>
             </a>
           </li>
-          <!-- Icon -->
+          <!-- Github AREDN/aredn -->
           <li class="nav-item me-3 me-lg-0">
             <a class="nav-link" href="https://github.com/aredn/aredn">
               <i class="fab fa-github"></i>
+            </a>
+          </li>
+          <!-- Icon -->
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="https://arednmesh.readthedocs.io/en/latest/">
+              <i class="fas fa-passport"></i>
             </a>
           </li>
         </ul>
@@ -71,7 +71,11 @@ export default {
     info: {},
     alertscount: Number
   },
-  methods: {},
+  methods: {
+    isOnline() {
+      
+    }
+  },
 };
 </script>
 
