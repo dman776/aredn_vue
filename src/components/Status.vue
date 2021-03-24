@@ -11,10 +11,11 @@
           <Performance :info="info.pages.status.sysinfo" />
         </div>
         <div class="row">
-          <FSRootFree :info="info.pages.status.storage" />
-          <FSTmpFree :info="info.pages.status.storage" />
           <OLSREntries :info="info.pages.status.olsr" />
           <OLSRNodes :info="info.pages.status.olsr" />
+          <FSRootFree :info="info.pages.status.storage" />
+          <FSTmpFree :info="info.pages.status.storage" />
+
         </div>
         <div class="row">
           <SystemInfo :info="info.pages.status.sysinfo" />

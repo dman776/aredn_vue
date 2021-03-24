@@ -72,9 +72,7 @@ export default {
     alertscount: Number
   },
   methods: {
-    isOnline() {
-      
-    }
+    
   },
 };
 </script>

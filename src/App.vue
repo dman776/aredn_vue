@@ -29,7 +29,7 @@ import AREDNAlert from './components/AREDNAlert.vue'
 import LOCALAlert from './components/LOCALAlert.vue'
 
 export default {
-  name: 'App',
+  name: 'npmApp',
   components: {
     Sidebar,
     Navbar,

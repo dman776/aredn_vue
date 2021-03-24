@@ -9,9 +9,9 @@
           </div>
           <div class="text-end">
             <p class="mb-0">Model: {{ info.model }}</p>
+            <p class="mb-0">Target Type: {{ info.target_type }}</p>
             <p class="mb-0">Firmware Version: {{ info.firmware_version }}</p>
-            <p class="mb-0">Node Date: {{ info.date }}</p>
-            <p class="mb-0">Node Time: {{ info.time }}</p>
+            <p class="mb-0">Node Date/time: {{ info.date }} {{ info.time}}</p>
           </div>
         </div>
       </div>

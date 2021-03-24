@@ -5,7 +5,7 @@
         class="collapse d-lg-block sidebar collapse bg-white"
         >
       <div class="position-sticky">
-        <div class="list-group list-group-flush mx-3 mt-4">
+        <div class="list-group list-group-flush mx-3 mt-5">
           <a
             href="#"
             class="list-group-item list-group-item-action py-2 ripple active"
@@ -56,11 +56,10 @@
             ><span>Setup</span></a
             >
           <a
-            href="#"
-            class="list-group-item list-group-item-action py-2 ripple"
-            ><i class="fas fa-question-circle fa-fw me-3"></i
-            ><span>Help</span></a
-            >
+            href="http://localnode.local.mesh/help.html"
+            class="list-group-item list-group-item-action py-2 ripple">
+            <i class="fas fa-question-circle fa-fw me-3"></i>
+            <span>Help</span></a>
         </div>
       </div>
     </nav>
