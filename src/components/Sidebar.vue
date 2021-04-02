@@ -6,14 +6,12 @@
         >
       <div class="position-sticky">
         <div class="list-group list-group-flush mx-3 mt-5">
-          <a
-            href="#"
+          <router-link to="/" 
             class="list-group-item list-group-item-action py-2 ripple active"
-            aria-current="true"
-            >
+            aria-current="true">
             <i class="fas fa-circle fa-fw me-3"></i
               ><span>Status</span>
-          </a>
+          </router-link>
           <a
             href="#"
             class="list-group-item list-group-item-action py-2 ripple"
@@ -49,12 +47,10 @@
             ><i class="fas fa-server fa-fw me-3"></i
             ><span>Tunnel Server</span></a
             >
-          <a
-            href="#"
+          <router-link to="/setup"
             class="list-group-item list-group-item-action py-2 ripple"
-            ><i class="fas fa-cog fa-fw me-3"></i
-            ><span>Setup</span></a
-            >
+            ><i class="fas fa-cog fa-fw me-3"></i><span>Setup</span>
+          </router-link>
           <a
             href="http://localnode.local.mesh/help.html"
             class="list-group-item list-group-item-action py-2 ripple">

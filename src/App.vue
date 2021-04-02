@@ -16,15 +16,14 @@
       </section>
       <!--Section: ALERTS-->
     </div>
-    </main>
-    <Status />
+    <router-view />
+  </main>
 </template>
 
 <script>
 
 import Sidebar from './components/Sidebar.vue'
 import Navbar from './components/Navbar.vue'
-import Status from './components/Status.vue'
 import AREDNAlert from './components/AREDNAlert.vue'
 import LOCALAlert from './components/LOCALAlert.vue'
 
@@ -34,8 +33,7 @@ export default {
     Sidebar,
     Navbar,
     AREDNAlert,
-    LOCALAlert,
-    Status
+    LOCALAlert
   },
   data() {
     return {
