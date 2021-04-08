@@ -2,26 +2,35 @@ import { createRouter, createWebHistory} from 'vue-router';
 import About from '@/views/About';
 import Status from '@/views/Status';
 import Setup from '@/views/Setup';
+//import { defineAsyncComponent } from 'vue';
+
+// function page(filename) {
+// 	return defineAsyncComponent(() => import('../views/' + filename + '.vue'));
+// }
 
 const routes = [
     {
         path: '/',
-        name: 'Home',
+        name: 'home',
+        // component: page('Status'),
         component: Status
     },
     {
         path: '/status',
-        name: 'Status',
+        name: 'status',
+        // component: page('Status'),
         component: Status
     },
     {
         path: '/setup',
-        name: 'Setup',
+        name: 'setup',
+        // component: page('Setup'),
         component: Setup
     },
     {
         path: '/about',
-        name: 'About',
+        name: 'about',
+        // component: page('About'),
         component: About
     }
 ]

@@ -28,8 +28,8 @@
               loading="lazy"
               />
         </a>
-        <div class="navbar-node-name">{{info.node}}</div>
-        <div class="navbar-node-desc">[ {{info.description}} ]</div>
+        <div class="navbar-node-name">{{info.sysinfo.node}}</div>
+        <div class="navbar-node-desc">[ {{info.sysinfo.description}} ]</div>
 
         <!-- Right links -->
         <ul class="navbar-nav ms-auto d-flex flex-row">
@@ -37,7 +37,7 @@
           <li class="nav-item me-3 me-lg-0">
             <a class="nav-link" href="#">
               <i class="fas fa-bell"></i>
-              <span class="badge rounded-pill badge-notification bg-danger">{{alertscount}}</span>
+              <span class="badge rounded-pill badge-notification bg-danger">{{alertsCount}}</span>
             </a>
           </li>
           <!-- Github AREDN/aredn -->
@@ -63,17 +63,28 @@
 export default {
   name: "Navbar",
   components: [],
-  created() {},
   data() {
     return {};
   },
   props: {
     info: {},
-    alertscount: Number
   },
   methods: {
-    
   },
+  computed: {
+    alertsCount() {
+      var count=0;
+      if(this.info.alerts.aredn != "") {
+        count++;
+      }
+      if(this.info.alerts.local != "") {
+        count++;
+      }
+      return count;
+    }
+  },
+  created() {
+  }
 };
 </script>
 

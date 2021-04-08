@@ -1,69 +1,69 @@
 <template>
   <!--Main Navigation-->
   <header>
+    <Navbar :info="info.pages.common" />
     <Sidebar />
-    <Navbar :info="info.pages.common.sysinfo" :alertscount="alertsCount" />
   </header>
   <!--Main Navigation-->
-  <main style="margin-top: 58px;">
+  <main style="margin-top: 58px">
     <div class="container pt-4">
       <!--Section: ALERTS-->
       <section>
         <div class="row">
-          <AREDNAlert :info='info.pages.common.alerts' v-show='info.pages.common.alerts.aredn !== "" '/>
-          <LOCALAlert :info='info.pages.common.alerts' v-show='info.pages.common.alerts.local !== "" '/>
+          <AREDNAlert
+            :info="info.pages.common.alerts"
+            v-show="info.pages.common.alerts.aredn !== ''"
+          />
+          <LOCALAlert
+            :info="info.pages.common.alerts"
+            v-show="info.pages.common.alerts.local !== ''"
+          />
         </div>
       </section>
       <!--Section: ALERTS-->
     </div>
-    <router-view />
+    <router-view></router-view>
   </main>
 </template>
 
 <script>
+import { defineAsyncComponent, ref } from "vue";
+// import { ref } from "vue";
+// import Sidebar from "./components/Sidebar.vue";
+// import Navbar from "./components/Navbar.vue";
+// import AREDNAlert from "./components/common/AREDNAlert.vue";
+// import LOCALAlert from "./components/common/LOCALAlert.vue";
 
-import Sidebar from './components/Sidebar.vue'
-import Navbar from './components/Navbar.vue'
-import AREDNAlert from './components/AREDNAlert.vue'
-import LOCALAlert from './components/LOCALAlert.vue'
+const dataService = "http://localnode.local.mesh:8080/cgi-bin/api?common=sysinfo,alerts";
 
 export default {
-  name: 'npmApp',
+  name: "AREDNUIApp",
   components: {
-    Sidebar,
-    Navbar,
-    AREDNAlert,
-    LOCALAlert
+    // Sidebar,
+    // Navbar,
+    // AREDNAlert,
+    // LOCALAlert,
+    Sidebar: defineAsyncComponent(() => import("./components/Sidebar.vue")),
+    Navbar: defineAsyncComponent(() => import("./components/Navbar.vue")),
+    AREDNAlert: defineAsyncComponent(() => import("./components/common/AREDNAlert.vue")),
+    LOCALAlert: defineAsyncComponent(() => import("./components/common/LOCALAlert.vue")),
   },
-  data() {
-    return {
-      info: {}
-    }
-  },
-  computed: {
-    alertsCount() {
-      var count=0;
-      if(this.info.pages.common.alerts.aredn != "") {
-        count++;
-      }
-      if(this.info.pages.common.alerts.local != "") {
-        count++;
-      }
-      return count;
-    }
+  setup() {
+    const info = ref();
+    return { info };
   },
   methods: {
     async fetchInfo() {
-      const res = await fetch('http://localnode.local.mesh:8080/cgi-bin/api?common=sysinfo,alerts')
-      const data = await res.json()
-      return data
-    }
+      // const res = await fetch(process.env.VUE_APP_PROXY + '?common=sysinfo,alerts')
+      const res = await fetch(dataService);
+      const data = await res.json();
+      return data;
+    },
   },
   async created() {
-    this.info = await this.fetchInfo()
-    console.log(this.info['pages']['common']['sysinfo'])
-  }
-}
+    this.info = await this.fetchInfo();
+  },
+};
 </script>
 
 <style>
